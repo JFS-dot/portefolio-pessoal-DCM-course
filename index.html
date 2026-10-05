@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jorge Fonseca e Sousa · Médico Dentista em Coimbra</title>
+<meta name="description" content="Médico Dentista em Coimbra. Planeamento, isolamento absoluto, dentisteria adesiva e reabilitação fixa, explicados para colegas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #111412;
+    --charcoal: #1D221F;
+    --line: #2E3631;
+    --text: #E6ECE4;
+    --muted: #9AA79F;
+    --sage: #93BDA6;
+    --sage-light: #BAD3BD;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--black); color: var(--text); font-family: Inter, system-ui, sans-serif; font-size: 18px; line-height: 1.6; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  h1, h2, h3, .cond { font-family: Oswald, Impact, sans-serif; text-transform: uppercase; line-height: 1.02; letter-spacing: .005em; }
+  a { color: var(--sage); }
+
+  nav { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 26px 0; border-bottom: 1px solid var(--line); }
+  nav .burger { width: 30px; height: 2px; background: var(--text); box-shadow: 0 9px 0 var(--text), 0 18px 0 var(--text); margin-bottom: 18px; }
+  nav .mark { font-family: Oswald, sans-serif; font-weight: 700; font-size: 26px; letter-spacing: .06em; text-transform: uppercase; text-align: center; }
+  nav .mark em { font-style: normal; color: var(--sage); }
+  nav .ig { justify-self: end; font-size: 14px; }
+
+  .hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; align-items: center; padding: 96px 0; }
+  .hero h1 { font-size: clamp(44px, 6.4vw, 92px); font-weight: 700; margin-bottom: 32px; }
+  .hero h1 em { font-style: normal; color: var(--sage); }
+  .hero p { font-size: 22px; max-width: 560px; color: var(--muted); }
+  .hero p strong { color: var(--text); font-weight: 500; }
+  .ph { display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px; border: 1.5px dashed var(--sage); color: var(--sage); background: var(--charcoal); font-size: 13px; text-transform: none; font-family: Inter, sans-serif; letter-spacing: 0; }
+  .hero .ph { aspect-ratio: 3 / 4; box-shadow: 18px 18px 0 var(--charcoal); }
+  .hero .portrait { width: 100%; max-width: 320px; justify-self: end; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 30%; display: block; box-shadow: 18px 18px 0 var(--charcoal); }
+
+  .ticker { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 22px 0; overflow: hidden; white-space: nowrap; }
+  .ticker span { font-family: Oswald, sans-serif; font-size: 30px; text-transform: uppercase; color: var(--muted); margin-right: 48px; }
+  .ticker span b { color: var(--sage); font-weight: 500; margin-right: 48px; }
+
+  section { padding: 104px 0; }
+  .label { font-size: 13px; letter-spacing: .2em; color: var(--sage); text-transform: uppercase; margin-bottom: 20px; display: block; }
+  h2 { font-size: clamp(38px, 5vw, 64px); font-weight: 700; margin-bottom: 48px; }
+
+  .rows { border-top: 1px solid var(--line); }
+  .rows div { display: grid; grid-template-columns: 80px 1fr 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .rows .n { color: var(--sage); font-family: Oswald, sans-serif; font-size: 22px; }
+  .rows h3 { font-size: 32px; font-weight: 500; }
+  .rows p { color: var(--muted); }
+
+  .quote { background: var(--charcoal); }
+  .quote blockquote { font-size: clamp(22px, 2.6vw, 32px); line-height: 1.45; max-width: 900px; }
+  .quote cite { display: block; margin-top: 24px; font-style: normal; color: var(--muted); font-size: 15px; }
+
+  .qs { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2px; background: var(--line); border: 1px solid var(--line); }
+  .qs div { background: var(--black); padding: 32px 24px; font-family: Oswald, sans-serif; text-transform: uppercase; font-size: 26px; line-height: 1.15; min-height: 170px; }
+
+  .cases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .cases .ph { aspect-ratio: 1; margin-bottom: 12px; }
+  .cases p { font-size: 14px; color: var(--muted); }
+
+  .cv { columns: 2; column-gap: 56px; }
+  .cv p { break-inside: avoid; padding: 16px 0; border-bottom: 1px solid var(--line); font-size: 16px; }
+  .cv b { display: block; font-family: Oswald, sans-serif; color: var(--sage); font-weight: 500; font-size: 18px; }
+
+  .contact { text-align: center; border-top: 1px solid var(--line); }
+  .contact h2 { margin-bottom: 24px; }
+  .contact a.big { font-family: Oswald, sans-serif; font-size: clamp(28px, 4vw, 48px); text-decoration: none; text-transform: none; }
+  footer { padding: 32px 0; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); text-align: center; }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero .portrait { justify-self: start; max-width: 260px; }
+    .rows div { grid-template-columns: 48px 1fr; }
+    .rows p { grid-column: 2; }
+    .cases { grid-template-columns: 1fr 1fr; }
+    .cv { columns: 1; }
+    nav .ig { display: none; }
+  }
+  .kicker { display: block; font-size: 15px; letter-spacing: .2em; text-transform: uppercase; color: var(--sage); margin-bottom: 20px; }
+  .lead { font-size: 21px; color: var(--muted); max-width: 720px; margin: -24px 0 48px; }
+  .quote p { font-size: clamp(20px, 2.2vw, 27px); line-height: 1.5; max-width: 900px; margin-bottom: 20px; }
+  .quote p:last-child { margin-bottom: 0; }
+  .cv-title { font-size: 26px; font-weight: 500; color: var(--sage); margin: 0 0 8px; }
+  .cv + .cv-title { margin-top: 56px; }
+  .cv h3 { font-size: 22px; color: var(--text); font-weight: 500; margin: 0 0 8px; column-span: all; }
+  .cv h3 + p { padding-top: 0; }
+  .team { margin-top: 56px; padding: 32px; border: 1px solid var(--line); color: var(--muted); }
+  .team strong { color: var(--text); font-weight: 500; }
+  /* efeitos */
+  .progress { position: fixed; top: 0; left: 0; height: 3px; width: 100%; background: var(--sage); transform-origin: 0 50%; transform: scaleX(0); z-index: 10; }
+  .js .reveal { opacity: 0; transform: translateY(36px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0s); }
+  .js .reveal.in { opacity: 1; transform: none; }
+  .js .hero h1, .js .hero p, .js .hero .kicker, .js .hero .portrait { opacity: 0; transform: translateY(28px); animation: rise 1s cubic-bezier(.2,.7,.2,1) forwards; }
+  .js .hero .kicker { animation-delay: .1s; }
+  .js .hero h1 { animation-delay: .25s; }
+  .js .hero p { animation-delay: .5s; }
+  .js .hero .portrait { animation-delay: .4s; transform: translateY(28px) scale(.97); }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+
+  .ticker .track { display: inline-block; animation: marquee 32s linear infinite; }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--line); }
+  .stats div { padding: 32px 24px; border-right: 1px solid var(--line); text-align: center; }
+  .stats div:last-child { border-right: 0; }
+  .stats b { display: block; font-family: Oswald, sans-serif; font-size: clamp(36px, 4.5vw, 56px); line-height: 1; color: var(--sage); font-weight: 700; }
+  .stats span { display: block; margin-top: 8px; color: var(--muted); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
+
+  .rows div { position: relative; transition: padding-left .4s ease; }
+  .rows div::after { content: ""; position: absolute; left: 0; bottom: -1px; height: 1px; width: 100%; background: var(--sage); transform: scaleX(0); transform-origin: 0 50%; transition: transform .8s cubic-bezier(.2,.7,.2,1) .2s; }
+  .rows div.in::after { transform: scaleX(1); }
+  .rows div:hover { padding-left: 12px; }
+  .rows .n { font-size: 40px; font-weight: 700; }
+
+  .qs div { transition: background .3s ease, color .3s ease; }
+  .qs div:hover { background: var(--sage); color: var(--black); }
+  .cases .ph { transition: transform .4s ease, border-color .4s ease; }
+  .cases .ph:hover { transform: translateY(-6px); border-color: var(--sage-light); }
+  .cv b { font-variant-numeric: tabular-nums; }
+
+  @media (max-width: 860px) {
+    .stats { grid-template-columns: 1fr; }
+    .stats div { border-right: 0; border-bottom: 1px solid var(--line); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .js .reveal, .js .hero h1, .js .hero p, .js .hero .kicker, .js .hero .portrait { opacity: 1; transform: none; animation: none; transition: none; }
+    .ticker .track { animation: none; }
+  }
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add("js");</script>
+<div class="progress" aria-hidden="true"></div>
+<div class="wrap">
+  <nav>
+    <div class="burger" aria-hidden="true"></div>
+    <span class="mark">JORGE FONSECA <em>e</em> SOUSA</span>
+    <a class="ig" href="https://instagram.com/jorge.fonseca.sousa">@jorge.fonseca.sousa</a>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <span class="kicker">Médico Dentista · Coimbra · OMD 9364</span>
+      <h1>Dentes que pareciam perdidos. <em>Recuperados.</em></h1>
+      <p><strong>Sou o Jorge Fonseca e Sousa.</strong> Trabalho em dentisteria adesiva e reabilitação oral desde 2015. Aqui partilho o que a faculdade não chega a ensinar: as decisões, a técnica e os pormenores da clínica de todos os dias.</p>
+    </div>
+    <img class="portrait" src="foto-jorge-fonseca-sousa.png" alt="Jorge Fonseca e Sousa, Médico Dentista">
+  </header>
+</div>
+
+<div class="ticker" aria-hidden="true">
+  <div class="track"><span>Resina composta<b>/</b>Reabilitação cerâmica<b>/</b>Overlays em dissilicato de lítio<b>/</b>Coroas BOPT em zircónia<b>/</b>Isolamento absoluto<b>/</b></span><span>Resina composta<b>/</b>Reabilitação cerâmica<b>/</b>Overlays em dissilicato de lítio<b>/</b>Coroas BOPT em zircónia<b>/</b>Isolamento absoluto<b>/</b></span></div>
+</div>
+
+<div class="stats">
+  <div><b data-count="12">12</b><span>anos de formado</span></div>
+  <div><b data-count="2">2</b><span>pós-graduações</span></div>
+  <div><b data-count="7">7</b><span>cursos modulares</span></div>
+</div>
+
+<section>
+  <div class="wrap">
+    <span class="label">O que faço</span>
+    <h2>Quatro áreas, um objetivo: conservar o dente.</h2>
+    <div class="rows">
+      <div><span class="n" data-count="1" data-pad="2">01</span><h3>Planeamento</h3><p>Enceramentos de diagnóstico, fotografia e vídeo clínico antes de cada reabilitação.</p></div>
+      <div><span class="n" data-count="2" data-pad="2">02</span><h3>Isolamento absoluto</h3><p>Também em dentes muito destruídos, os que parecem "impossíveis" de isolar.</p></div>
+      <div><span class="n" data-count="3" data-pad="2">03</span><h3>Dentisteria adesiva</h3><p>Restaurações diretas em resina composta, em dentes anteriores e posteriores, incluindo recobrimento de cúspides.</p></div>
+      <div><span class="n" data-count="4" data-pad="2">04</span><h3>Reabilitação fixa</h3><p>Coroas, overlays e pontes em cerâmica, sobre dentes naturais e sobre implantes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="wrap">
+    <span class="label">Cerâmica ou resina?</span>
+    <h2>Como explico a escolha ao paciente.</h2>
+    <p>Quando o dente tem indicação para cerâmica, é essa a minha primeira opção: é um material mais resistente, mais duradouro e com um resultado mais previsível.</p>
+    <p>Se o orçamento não o permitir, a resina composta é uma alternativa válida. O paciente deve saber, no entanto, que é um material mais poroso, mais sujeito a degradação e menos durável.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="label">Perguntas de colegas</span>
+    <h2>As dúvidas que me chegam todas as semanas.</h2>
+    <p class="lead">É a partir delas que partilho o meu trabalho.</p>
+    <div class="qs">
+      <div>Como abordarias este caso?</div>
+      <div>Como isolar um dente tão destruído?</div>
+      <div>Que material e que técnica escolher?</div>
+      <div>Onde deve ficar o incisivo central?</div>
+      <div>Que esquema oclusal para esta reabilitação?</div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="team" style="margin-top:0"><strong>Trabalho em equipa.</strong> Os casos mais complexos são feitos em conjunto com ortodontistas, periodontologistas, endodontistas, cirurgiões e técnicos de laboratório.</div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="label">Percurso</span>
+    <h2>Formação e experiência.</h2>
+    <h3 class="cv-title">Experiência</h3>
+      <div class="cv">
+      <p><b>Desde 2015</b>Oris Clinic, Centro Integrado de Medicina Dentária de Coimbra</p>
+      <p><b>Desde 2018</b>GreatEssence, Condeixa-a-Nova</p>
+      </div>
+      <h3 class="cv-title">Formação</h3>
+      <div class="cv">
+      <p><b data-count="2014" data-from="2000">2014</b>Mestrado Integrado em Medicina Dentária, Faculdade de Medicina da Universidade de Coimbra</p>
+      <p><b data-count="2017" data-from="2000">2017</b>Pós-Graduação em Dentisteria Adesiva com Resinas Compostas, CESPU</p>
+      <p><b data-count="2019" data-from="2000">2019</b>Lentes de contacto: planeamento e oclusão em reabilitação oral, Mollaris</p>
+      <p><b data-count="2022" data-from="2000">2022</b>Prótese fixa: planeamento e reabilitação estética, funcional e interdisciplinar, Sorriso Natural</p>
+      <p><b data-count="2023" data-from="2000">2023</b>Cirurgia mucogengival estética, periodontal e peri-implantar, Centro de Formação Fernando Almeida</p>
+      <p><b>2023/2024</b>Pós-Graduação em Implantologia Oral, CESPU</p>
+      <p><b data-count="2024" data-from="2000">2024</b>Reabilitação sobre implantes, da cirurgia à reabilitação protética, Oriseducare</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap">
+    <h2>Tens um caso difícil na cadeira?</h2>
+    <p style="color:var(--muted);margin-bottom:20px">Envia-me mensagem no Instagram.</p>
+    <a class="big" href="https://instagram.com/jorge.fonseca.sousa">@jorge.fonseca.sousa</a>
+  </div>
+</section>
+
+<footer>Jorge Fonseca e Sousa · Médico Dentista · OMD 9364 · Coimbra</footer>
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // barra de progresso
+  var bar = document.querySelector('.progress');
+  function onScroll() {
+    var h = document.documentElement;
+    var p = h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight);
+    bar.style.transform = 'scaleX(' + p + ')';
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // contagem dos números
+  function count(el) {
+    var end = parseInt(el.getAttribute('data-count'), 10);
+    var start = parseInt(el.getAttribute('data-from') || '0', 10);
+    var pad = parseInt(el.getAttribute('data-pad') || '0', 10);
+    var fmt = function (n) { var s = String(n); while (s.length < pad) s = '0' + s; return s; };
+    if (reduce) { el.textContent = fmt(end); return; }
+    var t0 = null, dur = 1400;
+    function step(t) {
+      if (!t0) t0 = t;
+      var k = Math.min(1, (t - t0) / dur);
+      k = 1 - Math.pow(1 - k, 3);
+      el.textContent = fmt(Math.round(start + (end - start) * k));
+      if (k < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  // aparecer ao fazer scroll
+  var targets = document.querySelectorAll('section .label, section h2, .lead, .rows > div, .quote p, .qs > div, .cases > div, .team, .cv-title, .cv p, .stats > div, .contact a.big');
+  document.querySelectorAll('.rows, .qs, .cases, .stats').forEach(function (group) {
+    Array.prototype.forEach.call(group.children, function (c, i) { c.style.setProperty('--d', (i * 0.12) + 's'); });
+  });
+  targets.forEach(function (el) { el.classList.add('reveal'); });
+
+  if (!('IntersectionObserver' in window)) {
+    targets.forEach(function (el) { el.classList.add('in'); });
+    document.querySelectorAll('[data-count]').forEach(count);
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      e.target.querySelectorAll('[data-count]').forEach(count);
+      if (e.target.hasAttribute('data-count')) count(e.target);
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(function (el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>
